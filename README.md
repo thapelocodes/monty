@@ -136,17 +136,17 @@ julien@ubuntu:~/monty$
 ```
 **The monty program**
 - Usage: `monty file`
-* where `file` is the path to the file containing Monty byte code
+	- where `file` is the path to the file containing Monty byte code
 - If the user does not give any file or more than one argument to your program, print the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - If, for any reason, it’s not possible to open the file, print the error message `Error: Can't open file <file>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-* where `<file>` is the name of the file
+	- where `<file>` is the name of the file
 - If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-* where `<line_number>` is the line number where the instruction appears.
-* Line numbers always start at 1
+	- where `<line_number>` is the line number where the instruction appears.
+	- Line numbers always start at 1
 - The monty program runs the bytecodes line by line and stop if either:
-* it executed properly every line of the file
-* it finds an error in the file
-* an error occured
+	- it executed properly every line of the file
+	- it finds an error in the file
+	- an error occured
 - If you can’t malloc anymore, print the error message `Error: malloc failed`, followed by a new line, and exit with status `EXIT_FAILURE`.
 - You have to use `malloc` and `free` and are not allowed to use any other function from `man malloc` (realloc, calloc, ...)
 
@@ -159,9 +159,9 @@ Implement the `push` and `pall` opcodes.
 **The push opcode**
 The opcode `push` pushes an element to the stack.
 - Usage: `push <int>`
-* where `<int>` is an integer
+	- where `<int>` is an integer
 - if `<int>` is not an integer or if there is no argument given to `push`, print the error message `L<line_number>: usage: push integer`, followed by a new line, and exit with the status `EXIT_FAILURE`
-* where `<line_number>` is the line number in the file
+	- where `<line_number>` is the line number in the file
 - You won’t have to deal with overflows. Use the `atoi` function
 
 **The pall opcode**
@@ -286,8 +286,8 @@ The opcode `add` adds the top two elements of the stack.
 - Usage: `add`
 - If the stack contains less than two elements, print the error message `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-+ The top element of the stack contains the result
-+ the stack is one element shorter
+	- The top element of the stack contains the result
+	- the stack is one element shorter
 ```
 julien@ubuntu:~/monty$ cat bytecodes/12.m 
 push 1
@@ -331,8 +331,8 @@ The opcode `sub` subtracts the top element of the stack from the second top elem
 - Usage: `sub`
 - if the stack contains less than two elements, print the error message `L<line_number>: can't sub, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-+ The top element of the stack contains the result
-+ The stack is one element shorter
+	- The top element of the stack contains the result
+	- The stack is one element shorter
 ```
 julien@ubuntu:~/monty$ cat bytecodes/19.m 
 push 1
@@ -362,8 +362,8 @@ The opcode `div` divides the second top element of the stack by the top element 
 - Usage: `div`
 - If the stack contains less than two elements, print the error message `L<line_number>: can't div, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-+ The top element of the stack contains the result
-+ The stack is one element shorter
+	- The top element of the stack contains the result
+	- The stack is one element shorter
 - If the top element of the stack is `0`, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`
 
 **Repo:**
@@ -397,8 +397,8 @@ The opcode `mod` computes the rest of the division of the second top element of 
 - Usage: mod
 - If the stack contains less than two elements, print the error message `L<line_number>: can't mod, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
-+ The top element of the stack contains the result
-+ The stack is one element shorter
+	- The top element of the stack contains the result
+	- The stack is one element shorter
 - If the top element of the stack is `0`, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`
 
 **Repo:**
@@ -446,9 +446,9 @@ The opcode pstr prints the string starting at the top of the stack, followed by 
 - Usage: `pstr`
 - The integer stored in each element of the stack is treated as the ascii value of the character to be printed
 - The string stops when either:
-+ the stack is over
-+ the value of the element is 0
-+ the value of the element is not in the ascii table
+	- the stack is over
+	- the value of the element is 0
+	- the value of the element is not in the ascii table
 - If the stack is empty, print only a new line
 ```
 julien@ubuntu:~/monty$ cat bytecodes/31.m 
