@@ -59,7 +59,7 @@ extern info_t info;
 
 /* opcode.c */
 void spush(stack_t **head, unsigned int number);
-void spall(stack_t **head, unsigned int number);
+void spall(stack_t **head);
 void spint(stack_t **head, unsigned int number);
 void spop(stack_t **head, unsigned int counter);
 void sswap(stack_t **head, unsigned int counter);
@@ -74,13 +74,13 @@ void smul(stack_t **head, unsigned int counter);
 /* opcode2.c */
 void smod(stack_t **head, unsigned int counter);
 void spchar(stack_t **head, unsigned int counter);
-void spstr(stack_t **head, unsigned int counter);
-void srotl(stack_t **head, unsigned int counter);
-void srotr(stack_t **head, unsigned int counter);
+void spstr(stack_t **head);
+void srotl(stack_t **head);
+void srotr(stack_t **head);
 
 /* opcode3.c */
-void squeue(stack_t **head, unsigned int counter);
-void sstack(stack_t **head, unsigned int counter);
+void squeue(void);
+void sstack(void);
 
 /* stackqueue.c */
 void add_st(stack_t **head, int n);
